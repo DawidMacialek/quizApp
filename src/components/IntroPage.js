@@ -12,13 +12,14 @@ export default function IntroPage(props) {
           id='category'
         >
           <option value='any category'>Any category</option>
-          <option value='general knowladge'>General knowladge</option>
-          <option value='sports'>Sports</option>
-          <option value='history'>History</option>
-          <option value='geography'>Geography</option>
-          <option value='politicts'>Politics</option>
-          <option value='animal'>Animal</option>
-          <option value='art'>Art</option>
+          <option value='9'>General knowladge</option>
+          <option value='21'>Sports</option>
+          <option value='23'>History</option>
+          <option value='22'>Geography</option>
+          <option value='24'>Politics</option>
+          <option value='27'>Animal</option>
+          <option value='28'>Vehicles</option>
+          <option value='25'>Art</option>
         </select>
         <select
           name='level'
@@ -37,11 +38,13 @@ export default function IntroPage(props) {
           name='numOfQuest'
           type='number'
           id='numberOfQuestions'
-          max="40"
+          max='40'
           min='1'
         />
       </form>
-      <button className='intro--btn'>Let's Play!</button>
+      <button className='intro--btn' onClick={props.handleStartQuiz}>
+        Let's Play!
+      </button>
     </main>
   );
 }

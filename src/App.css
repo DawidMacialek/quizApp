@@ -1,0 +1,118 @@
+/* Board styling */
+.board--container {
+  width: 100vw;
+  /* height: 100vh; */
+  max-width: 1000px;
+  /* max-height: 1000px; */
+  margin: auto auto;
+  background-color: #ddd;
+  padding: 40px 0;
+}
+.question--container {
+  background-color: #fff;
+  padding: 3% 10%;
+  border-bottom: 1px dotted grey;
+  display: flex;
+  flex-direction: column;
+}
+.question {
+  margin-bottom: 20px;
+}
+.answers--container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.answer {
+  text-align: center;
+  font-size: 18px;
+  padding: 3px 10px;
+  min-width: 200px;
+  margin: 0 2px;
+  border: 1px solid #000;
+  border-radius: 15px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.answer.checked {
+  border: none;
+  background-color: #94d7a2;
+}
+.check--answers-btn {
+  display: block;
+  margin: 50px auto;
+  width: 240px;
+  height: 46px;
+  border-radius: 18px;
+  background-color: #1c89ff;
+  border: solid 1px transparent;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+.check--answers-btn:hover {
+  background-color: #1c8affa4;
+  border-color: #ccc;
+  transition: all 0.1s ease-in-out;
+}
+/* IntroPage styling */
+.intro--container {
+  background-color: #ddd;
+  width: 100vw;
+  height: 100vh;
+  max-width: 1000px;
+  max-height: 1000px;
+  margin: auto auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.intro--container > h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+.intro--container > form {
+  display: flex;
+  flex-direction: column;
+}
+.intro--container > form > select {
+  margin: 15px auto;
+  padding: 5px;
+  padding: 7px 40px 7px 12px;
+  width: 100%;
+  border: 1px solid #e8eaed;
+  border-radius: 5px;
+  background: white;
+  box-shadow: 0 1px 3px -2px #9098a9;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 16px;
+}
+.intro--container > form > input {
+  width: 60px;
+  margin: 5px auto;
+  padding: 5px;
+}
+.intro--container > form > label {
+  font-size: 16px;
+}
+.intro--btn {
+  display: block;
+  width: 240px;
+  height: 46px;
+  border-radius: 18px;
+  background-color: #1c89ff;
+  border: solid 1px transparent;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+.intro--btn:hover {
+  background-color: #1c8affa4;
+  border-color: #ccc;
+  transition: all 0.1s ease-in-out;
+}
