@@ -2,10 +2,10 @@
 .board--container {
   width: 100vw;
   /* height: 100vh; */
-  max-width: 1000px;
+  max-width: 1200px;
   /* max-height: 1000px; */
   margin: auto auto;
-  background-color: #ddd;
+  /* background-color: #ddd; */
   padding: 40px 0;
 }
 .question--container {
@@ -16,12 +16,18 @@
   flex-direction: column;
 }
 .question {
-  margin-bottom: 20px;
+  margin: 30px 0;
 }
 .answers--container {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+}
+.showCorrect {
+  border: 3px solid green;
+}
+.showWrongAnswer {
+  background-color: red;
 }
 .answer {
   text-align: center;
@@ -32,9 +38,13 @@
   border: 1px solid #000;
   border-radius: 15px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  cursor: pointer;
+}
+.answer .checked {
+  background-color: green;
 }
 .answer.checked {
-  border: none;
+  /* border: none; */
   background-color: #94d7a2;
 }
 .check--answers-btn {
@@ -115,4 +125,25 @@
   background-color: #1c8affa4;
   border-color: #ccc;
   transition: all 0.1s ease-in-out;
+}
+.results--container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* transform: translateY(-50%); */
+  right: 0;
+  height: 25%;
+  background-color: #000;
+  opacity: 0.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.results--container p {
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  font-size: 60px;
+  text-align: center;
+  color: #fff;
 }
