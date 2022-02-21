@@ -3,6 +3,7 @@ import './App.css';
 import IntroPage from './components/IntroPage';
 import Board from './components/Board';
 import Results from './components/Results';
+import Timer from './components/Timer';
 
 function App() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -13,6 +14,7 @@ function App() {
   });
   const [questions, setQuestions] = useState([]);
   const [showResults, setShowResults] = useState(false);
+  const [timerStart, setTimerStart] = useState(true);
   //  tick choosen answer
   function handleCheckedAnswer(event) {
     const { innerText, id } = event.target;
@@ -53,8 +55,13 @@ function App() {
     checkingAnswers(questions);
     setShowResults(true);
     numberOfCorrectAnswers(questions);
+    setTimerStart(false);
   }
-
+  function handlePlayAgain() {
+    setIsPlaying(false);
+    setShowResults(false);
+    setTimerStart(true);
+  }
   function suffleAnswers(arrToShuffle, correctAnswer) {
     let unshuffledAnswers = arrToShuffle;
     unshuffledAnswers.push(correctAnswer);
@@ -103,7 +110,7 @@ function App() {
   }
 
   return (
-    <div className='App'>
+    <div className='app'>
       {!isPlaying ? (
         <IntroPage
           handleChangeSettings={handleChangeSettings}
@@ -111,16 +118,24 @@ function App() {
           handleStartQuiz={handleStartQuiz}
         />
       ) : (
-        <Board
-          questions={questions}
-          handleCheckedAnswer={handleCheckedAnswer}
-          handleToCheckBoard={handleToCheckBoard}
-        />
+        <>
+          <Board
+            questions={questions}
+            handleCheckedAnswer={handleCheckedAnswer}
+            handleToCheckBoard={handleToCheckBoard}
+          />
+          <Timer
+            numOfMinutes={questions.length}
+            timerStart={timerStart}
+            handleToCheckBoard={handleToCheckBoard}
+          />
+        </>
       )}
       {showResults && (
         <Results
           numOfQuest={questions.length}
           numberOfCorrectAnswers={numberOfCorrectAnswers(questions)}
+          handlePlayAgain={handlePlayAgain}
         />
       )}
     </div>

@@ -1,8 +1,11 @@
 import React from 'react';
 
-export default function Board(props) {
-
-  const elements = props.questions.map((item, index) => {
+export default function Board({
+  handleCheckedAnswer,
+  questions,
+  handleToCheckBoard,
+}) {
+  const elements = questions.map((item, index) => {
     let question = atob(item.question);
     let styleElem;
 
@@ -36,12 +39,11 @@ export default function Board(props) {
               <div
                 key={element}
                 id={item.questionId}
-                
                 className={
                   answer === item.userAnswer ? 'answer checked' : 'answer'
                 }
                 style={styleElem}
-                onClick={props.handleCheckedAnswer}
+                onClick={handleCheckedAnswer}
               >
                 {answer}
               </div>
@@ -55,7 +57,7 @@ export default function Board(props) {
   return (
     <section className='board--container'>
       {elements}
-      <button onClick={props.handleToCheckBoard} className='check--answers-btn'>
+      <button onClick={handleToCheckBoard} className='check--answers-btn'>
         Check answers
       </button>
     </section>

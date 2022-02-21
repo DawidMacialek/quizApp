@@ -9,6 +9,7 @@ export default function Results(props) {
           {props.numberOfCorrectAnswers}/{props.numOfQuest}
         </span>
       </p>
+      <button className="btn-play-again" onClick={props.handlePlayAgain}>Play Again</button>
     </div>
   );
 }
