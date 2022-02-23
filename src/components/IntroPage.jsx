@@ -31,15 +31,18 @@ export default function IntroPage(props) {
           <option value='medium'>Medium</option>
           <option value='hard'>Hard</option>
         </select>
-        <label htmlFor='numberOfQuestions'>Number Of Questions (max=40)</label>
+        <label htmlFor='numberOfQuestions'>
+          Number Of Questions (max=40) <br />
+          Some categories don't have more than 10 questions.
+        </label>
         <input
           onChange={props.handleChangeSettings}
           value={props.quizSettings.numOfQuest}
           name='numOfQuest'
           type='number'
           id='numberOfQuestions'
-          max='40'
-          min='1'
+          max={40}
+          min={1}
         />
       </form>
       <button className='intro--btn' onClick={props.handleStartQuiz}>

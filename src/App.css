@@ -3,6 +3,7 @@
   background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
   min-height: 100vh;
   overflow-x: auto;
+  font-family: 'Poppins', 'Montserrat', 'Roboto', 'Lato', sans-serif;
 }
 .board--container {
   width: 100vw;
@@ -118,7 +119,7 @@
   padding: 5px;
 }
 .intro--container > form > label {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .intro--btn {

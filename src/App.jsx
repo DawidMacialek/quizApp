@@ -48,7 +48,6 @@ function App() {
     console.log(correctAnswersArray);
     return correctAnswersArray.length;
   }
-  console.log(questions);
 
   // handle on click check the answers
   function handleToCheckBoard() {
@@ -87,7 +86,9 @@ function App() {
     const url = `https://opentdb.com/api.php?amount=${quizSettings.numOfQuest}${categoryEndpoint}&difficulty=${quizSettings.level}&type=multiple&encode=base64`;
 
     await fetch(url)
-      .then((response) => response.json())
+      .then((response) => {
+        return response.json();
+      })
       .then((data) => {
         const gameState = [];
         data.results.forEach((item, index) => {
@@ -103,10 +104,18 @@ function App() {
           return gameState;
         });
 
-        setQuestions(gameState);
+        if (data.results.length) {
+          setQuestions(gameState);
+          setIsPlaying((prevState) => !prevState);
+        } else {
+          alert(
+            'There is not enough questions in this category, please set number of questions again.'
+          );
+        }
+      })
+      .catch((error) => {
+        throw error;
       });
-
-    setIsPlaying((prevState) => !prevState);
   }
 
   return (
